@@ -1,9 +1,11 @@
 package com.example.helloworld;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -32,5 +34,20 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void onClick(View v) {
+    	int id = v.getId();
+    	switch (id) {
+		case R.id.button1:
+			Intent i = new Intent();
+			i.setClass(this, SecondActivity.class);
+			startActivity(i);
+			break;
+
+		default:
+			break;
+		}
+    	
     }
 }
